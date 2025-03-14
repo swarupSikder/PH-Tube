@@ -51,10 +51,12 @@ const fetchVideos = async (searchText="") => {
     try {
         const response = await fetch(`https://openapi.programming-hero.com/api/phero-tube/videos?title=${searchText}`);
         const data = await response.json();
+        showLoader();
         displayVideos(data.videos);
     }
     catch {
         console.log("error");
+        hideLoader();
     }
 }
 fetchVideos();
@@ -63,6 +65,8 @@ fetchVideos();
 //   display videos   //
 //--------------------//
 const displayVideos = (videos) => {
+    showLoader();
+
     //video container
     const videoContainer = document.getElementById('video-container');
     //clear dataset initially, then categorize
@@ -75,6 +79,7 @@ const displayVideos = (videos) => {
     //empty category case:
     if (!videos.length) {
         videoContainer.innerHTML = "<p class='text-center text-gray-500'>No videos found.</p>";
+        hideLoader();
         return;
     }
 
@@ -131,6 +136,8 @@ const displayVideos = (videos) => {
         videoContainer.appendChild(videoItem);
 
     });
+
+    hideLoader();
 }
 
 //prototype
@@ -196,6 +203,7 @@ const displayVideos = (videos) => {
 //--------------------------------//
 const displayCategorizedVideos = async (id) => {
     try {
+        showLoader();
         const response = await fetch(`https://openapi.programming-hero.com/api/phero-tube/category/${id}`);
         const data = await response.json();
         displayVideos(data.category, id);
@@ -203,7 +211,7 @@ const displayCategorizedVideos = async (id) => {
         const clickedCategory = document.getElementById(`btn-${id}`);
         removeActiveClass();
         addActiveClass(clickedCategory);
-
+        hideLoader();
 
     }
     catch (error) {
@@ -244,7 +252,6 @@ document.getElementById('category-all').addEventListener('click', () => {
 //------------------------------//
 function removeActiveClass() {
     const activeCategories = document.getElementsByClassName('category-active');
-    console.log(activeCategories);
 
     for (let ac of activeCategories) {
         ac.classList.remove('category-active');
@@ -343,3 +350,24 @@ document.getElementById('search-input')
         const input = e.target.value;
         fetchVideos(input);
     });
+
+
+
+
+
+
+
+
+
+//-------------------------//
+//   show or hide loader   //
+//-------------------------//
+const showLoader = () => {
+    document.getElementById('loader').classList.remove('hidden');
+    document.getElementById('video-container').classList.add('hidden');
+};
+
+const hideLoader = () => {
+    document.getElementById('loader').classList.add('hidden');
+    document.getElementById('video-container').classList.remove('hidden');
+};
