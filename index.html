@@ -63,7 +63,7 @@
                             <path d="m21 21-4.3-4.3"></path>
                         </g>
                     </svg>
-                    <input type="search" required placeholder="Search" />
+                    <input id="search-input" type="search" required placeholder="Search" />
                 </label>
             </div>
 
@@ -115,7 +115,7 @@
 
             <!--video-container-->
             <div id="video-container" class="grid grid-cols-4 gap-8">
-            
+
                 <!--no-videos-->
 
             </div>
@@ -129,7 +129,23 @@
 
 
 
-
+    <!-- You can open the modal using ID.showModal() method -->
+    <dialog id="video_details" class="modal">
+        <div class="modal-box w-11/12 max-w-5xl">
+            
+            <!--details container-->
+            <div id="details-container"></div>
+            
+            
+            <!--close button-->
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
 
 
 
