@@ -44,9 +44,9 @@
     <!--          -->
     <!-- (header) -->
     <!--          -->
-    <header>
+    <header class="mx-12">
 
-        <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar bg-base-100 shadow-sm py-4">
 
             <!--left-->
             <div class="navbar-start">
@@ -87,7 +87,76 @@
     <!--        -->
     <!-- (main) -->
     <!--        -->
-    <main>
+    <main class="mx-12 my-8">
+
+        <!--Categories-->
+        <section class="py-4">
+
+            <!--cat-container-->
+            <div id="cat-container" class="w-fit mx-auto space-x-1">
+                <a class="category-btn category-active">All</a>
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--videos-->
+        <section class="py-4">
+
+            <!--video-container-->
+            <div id="video-container" class="grid grid-cols-4 gap-8">
+
+                <!--item blueprint-->
+                <div class="card bg-base-100 shadow-lg p-2 h-[400px]">
+
+                    <!--thumbnail part-->
+                    <div class="relative">
+                        <img class="w-full h-[230px] object-cover rounded-lg" src="https://i.ibb.co/L1b6xSq/shape.jpg" alt="" srcset="">
+                        <span
+                            class="absolute bg-gray-500 px-2 py-1 text-gray-300 rounded-sm text-sm bottom-2 right-2">3hrs
+                            56min ago</span>
+                    </div>
+
+                    <!--detail part-->
+                    <div class="my-4 flex space-x-5">
+
+                        <!--left-->
+                        <div class="avatar">
+                            <div class="w-[40px] h-[40px] object-cover rounded-full">
+                                <img src="./assets/icon.png" />
+                            </div>
+                        </div>
+
+                        <!--right-->
+                        <div>
+                            <h2 class="font-bold text-xl w-[85%]">Website built by Swarup sikder</h2>
+
+                            <div class="flex space-x-2 items-center mt-2">
+                                <span class="text-slate-500 text-sm">Swarup Sikder</span>
+                                <img class="w-[16px] h-[16px]" src="./assets/verified.png" alt="" srcset="">
+                            </div>
+
+                            <p class="text-slate-500 text-sm mt-1">100K views</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
 
     </main>
 
