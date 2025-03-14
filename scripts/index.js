@@ -61,7 +61,7 @@ const displayVideos = (videos) => {
         const videoItem = document.createElement('div');
         videoItem.innerHTML = `
             <!--item blueprint-->
-                <div class="card bg-base-100 shadow-lg p-2 h-[400px]">
+                <div class="card bg-base-100 shadow-lg p-2 h-[370px]">
 
                     <!--thumbnail part-->
                     <div class="relative">
@@ -77,20 +77,20 @@ const displayVideos = (videos) => {
                         <!--left-->
                         <div class="avatar">
                             <div class="w-[40px] h-[40px] object-cover rounded-full">
-                                <img src="./assets/icon.png" />
+                                <img src="${vid.authors[0].profile_picture}" />
                             </div>
                         </div>
 
                         <!--right-->
-                        <div>
-                            <h2 class="font-bold text-xl w-[85%]">Website built by Swarup sikder</h2>
+                        <div class="w-full">
+                            <h2 class="font-bold text-xl">${vid.title}</h2>
 
                             <div class="flex space-x-2 items-center mt-2">
-                                <span class="text-slate-500 text-sm">Swarup Sikder</span>
+                                <span class="text-slate-500 text-sm">${vid.authors[0].profile_name}</span>
                                 <img class="w-[16px] h-[16px]" src="./assets/verified.png" alt="" srcset="">
                             </div>
 
-                            <p class="text-slate-500 text-sm mt-1">100K views</p>
+                            <p class="text-slate-500 text-sm mt-1">${vid.others.views}</p>
                         </div>
 
                     </div>
@@ -102,3 +102,41 @@ const displayVideos = (videos) => {
         videoContainer.appendChild(videoItem);
     });
 }
+
+//prototype
+// < !--item blueprint-- >
+//     <div class="card bg-base-100 shadow-lg p-2 h-[370px]">
+
+//         <!--thumbnail part-->
+//         <div class="relative">
+//             <img class="w-full h-[230px] object-cover rounded-lg" src="https://i.ibb.co/L1b6xSq/shape.jpg" alt="" srcset="">
+//                 <span
+//                     class="absolute bg-gray-500 px-2 py-1 text-gray-300 rounded-sm text-sm bottom-2 right-2">3hrs
+//                     56min ago</span>
+//         </div>
+
+//         <!--detail part-->
+//         <div class="my-4 flex space-x-5">
+
+//             <!--left-->
+//             <div class="avatar">
+//                 <div class="w-[40px] h-[40px] object-cover rounded-full">
+//                     <img src="./assets/icon.png" />
+//                 </div>
+//             </div>
+
+//             <!--right-->
+//             <div>
+//                 <h2 class="font-bold text-xl">Website built</h2>
+
+//                 <div class="flex space-x-2 items-center mt-2">
+//                     <span class="text-slate-500 text-sm">Swarup Sikder</span>
+//                     <img class="w-[16px] h-[16px]" src="./assets/verified.png" alt="" srcset="">
+//                 </div>
+
+//                 <p class="text-slate-500 text-sm mt-1">100K views</p>
+//             </div>
+
+//         </div>
+
+//     </div>
