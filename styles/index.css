@@ -1,0 +1,13 @@
+.search-input {
+    border: 2px solid rgb(236, 236, 236);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.search-input:hover {
+    border-color: rgb(255, 197, 197);
+}
+
+.search-input:focus-within {
+    border-color: rgb(255, 197, 197);
+    outline: none;
+}
